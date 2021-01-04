@@ -1,0 +1,11 @@
+.DS_Store
+/node_modules/
+.vscode/settings.json
+.vscode/spellright.dict
+attendee/simpleRest/.odo/
+setup/playbooks/roles/deploy_docs/files/manifests/*
+target/
+
+# Don't commit the cluster file, but commit the template
+/setup/playbooks/group_vars/all/cluster*
+!/setup/playbooks/group_vars/all/cluster.yml.template
