@@ -1,0 +1,79 @@
+---
+# file: main.yml
+
+- name: Create project
+  k8s:
+    name: "{{ project_name }}"
+    api_version: v1
+    kind: Namespace
+    state: present
+
+- name: create configMaps from manifests
+  k8s:
+    state: present
+    definition: "{{ lookup('template', 'Map.yml.j2') }}"
+
+- name: Create httpd application
+  k8s:
+    state: present
+    definition: "{{ lookup('template', 'httpd.yml.j2') }}"
+
+- name: Get route to manifests application
+  k8s:
+    kind: Route
+    namespace: "{{ project_name }}"
+    name: manifests
+    api_version: route.openshift.io/v1
+  register: manifests_routes
+
+- name: Deploy workshopper application
+  k8s:
+    state: present
+    definition: "{{ lookup('template', 'workshopper.yml.j2') }}"
+
+- name: Get route to workshopper application
+  k8s:
+    api_version: route.openshift.io/v1
+    kind: Route
+    namespace: "{{ project_name }}"
+    name: docs
+  register: workshopper_route
+
+- name: check if redis secret already exists
+  k8s_info:
+    api_version: v1
+    kind: Secret
+    name: redis
+    namespace: "{{ project_name }}"
+  register: redis_secret
+
+- name: generate random redis secret
+  k8s:
+    state: present
+    namespace: "{{ project_name }}"
+    definition:
+      apiVersion: v1
+      data:
+        REDIS_PASSWORD: "{{ lookup('password', '/dev/null length=15') | b64encode }}"
+      kind: Secret
+      metadata:
+        creationTimestamp: null
+        name: redis
+  when: redis_secret.resources | length == 0
+
+- name: Deploy username-distribution application
+  k8s:
+    state: present
+    namespace: "{{ project_name }}"
+    definition: "{{ lookup('template', 'username-distribution.yml.j2') }}"
+
+- name: Get route to username-distribution application
+  k8s:
+    kind: Route
+    namespace: "{{ project_name }}"
+    name: username-distribution
+    api_version: route.openshift.io/v1
+  register: username_routes
+
+- debug:
+    msg: "Here is the URL for the starting point: https://{{ username_routes.result.spec.host }}"
