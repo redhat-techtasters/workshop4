@@ -35,18 +35,18 @@ Service Mesh on OpenShift
 Quay, Buildah and Podman
 OpenShift Serverless Serving
 
-To run a workshop request an OpenShift 4.6 Workshop via RHPDS. If you do not wish to use RHPDS, create a 4.6 Cluster and ensure you create users for the attendees (userx with password openshift).
+To run a workshop request an OpenShift 4.6 Workshop via RHPDS. If you do not wish to use RHPDS, create a 4.6 Cluster and ensure you create users for the attendees (`userX` with password `openshift`).
 
 This is a dynamic version of the Workshop and allows creators to define and setup workshops with any combination of the labs provided. 
 
 To build the documentation for the workshop you need to do the following:
 
-1. Navigate to setup/playbook/group_vars/all directory, and rename cluster.yml.template to cluster 
+1. Navigate to setup/playbook/group_vars/all directory, and rename `cluster.yml.template` to `cluster`
 2. Edit the variables in setup/playbooks/group_vars/all directory
-   * cluster - insert cluster URLs and API token
-   * manifest - defines the labs that will be included in the workshop
-   * links - the hyperlinks that will appear at the bottom of the username distribution app
-   * extra_vars - password for the username distribution admin interface, password for attendees to be given a username, and number of usernames to create in the username distribution app
+   * `cluster` - insert cluster URLs and API token
+   * `manifest` - defines the labs that will be included in the workshop
+   * `links` - the hyperlinks that will appear at the bottom of the username distribution app
+   * `extra_vars` - password for the username distribution admin interface, password for attendees to be given a username, and number of usernames to create in the username distribution app
 2. Change to the setup/playbooks directory
 3. Run the Deploy_Docs.yml playbook - `ansible-playbook Deploy_Docs.yml`
 4. The last task in the playbook will give you the starting point URL
