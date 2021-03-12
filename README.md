@@ -41,7 +41,7 @@ This is a dynamic version of the Workshop and allows creators to define and setu
 
 To build the documentation for the workshop you need to do the following:
 
-1. Navigate to setup/playbook/group_vars/all directory, and rename `cluster.yml.template` to `cluster`
+1. Navigate to the `cluster` file in the setup/playbook/group_vars/all directory
 2. Edit the variables in setup/playbooks/group_vars/all directory
    * `cluster` - insert cluster URLs and API token
    * `manifest` - defines the labs that will be included in the workshop
