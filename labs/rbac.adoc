@@ -14,15 +14,15 @@ Ensure you are on the Administrator View (top level, select Administrator)
 
 *Click on 'Create Project'*
 
-For the project name give it rbactest-{{USER_ID}}
+For the project name give it 'rbactest-{{USER_ID}}'
 
-Display Name and Description are optional
+Display Name and Description are optional.
 
 *Click on 'Create'*
 
 === Examining Service Accounts
 
-Once the project has been created, click on 'User Management/Service Accounts'
+Once the project has been created, use the sidebar menu to navigate to 'User Management/Service Accounts'.
 
 image::rbac-1.png[List of Service Accounts]
 
@@ -32,15 +32,13 @@ TIP: Service Accounts are effectively virtual users - even though you have logge
 
 *In addition further Service Accounts can be created by the project owner and given additional security details and roles, such as being able to execute Containers as root, or giving Containers specific controlled sec-comp profiles (like changing the Group ID for the process)*
 
-Switch to the Developer view using the top left pulldown
+Switch to the Developer view by clicking on 'Administrator' in the top-left.
 
 *In the Topology Tab click on ‘From Catalog’*
 
 In the search box enter ‘node’. Select the Node.js option (Builder Image)
 
 *Click ‘Create Application’*
-
-Leave the Builder Image Version as 12-ubi7
 
 For the git repo enter ‘https://github.com/utherp0/nodenews’
 
@@ -54,13 +52,13 @@ In Resources set the deployment to DeploymentConfig
 
 *Click 'Create'*
 
-*Click on the Node pod indicator so the informational panel appears*
+*Click on the Node pod indicator so that the informational panel appears*
 
 Watch the build and ensure it completes
 
 Once the build is complete ensure the deployment occurs. The Pod ring will turn dark blue
 
-Switch back to Administrator view using the top left selection point
+Switch back to the Administrator view by clicking on 'Developer' in the top-left.
 
 *Click on User Management/Role Bindings*
 
@@ -76,7 +74,7 @@ TIP: Note that with the filter for System Role Bindings we can now see the three
 
 Remove the filter by clicking on the cross next to it
 
-*Click on the (CR) admin Role Ref*
+*Click on the (CR) 'admin' Role Ref*
 
 *This screen displays ALL the actions, via API, that this role has access to grouped by the API groups. This mapping is what controls what the user can do via the bindings they have.*
 
@@ -88,11 +86,11 @@ Remove the filter by clicking on the cross next to it
 
 *Set Name to ‘partneraccess’*
 
-Select ‘rbactest-{{USER_ID}}’ from the Namespace pulldown. 
+Make sure that the Namespace is ‘rbactest-{{USER_ID}}’. If it is not, select ‘rbactest-{{USER_ID}}’ from the Project dropdown menu in the top left.
 
 *As a user with the admin role within the namespace/project you can add other users with role bindings within your project.*
 
-Select ‘Admin’ in the Role Name pulldown
+Select ‘admin’ in the Role Name pulldown
 
 Ensure ‘User’ is selected in the radiobox for Subject
 
@@ -102,7 +100,7 @@ Enter ‘user(PARTNERUSER)’ for the Subject Name
 
 *Click 'Create'*
 
-Ensure the partner has done the same with your {{USER_ID}}
+Lets ensure the partner has done the same with your {{USER_ID}}
 
 *Click on Home/Projects*
 
@@ -140,7 +138,7 @@ Confirm deletion in the pop-up message box
 
 Set Name to ‘partneraccess’
 
-Choose the ‘rbactest-{{USER_ID}}’ in the Namespace pulldown
+Make sure that the Namespace is ‘rbactest-{{USER_ID}}’. If it is not, select ‘rbactest-{{USER_ID}}’ from the Project dropdown menu in the top left.
 
 Select ‘view’ in the Role Name pull down
 
