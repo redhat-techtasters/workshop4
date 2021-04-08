@@ -86,7 +86,7 @@ Multiple application groupings can exist within a single project.
 
 Click on the Icon marked ‘Node’
 
-A side panel will appear o the right hand side with information on the Deployment Configuration that has just been created. The details tab shows summary information and allows the user to scale the number of pods up and down. The resources tab shows information on the build process, the pods and the services and route to reach the application (if these have been created). The monitoring tab shows information on warnings, metrics and events.
+A side panel will appear on the right hand side with information on the Deployment Configuration that has just been created. The details tab shows summary information and allows the user to scale the number of pods up and down. The resources tab shows information on the build process, the pods and the services and route to reach the application (if these have been created). The monitoring tab shows information on warnings, metrics and events.
 
 You will also see specific information about Health Checks which can be created using the graphical user interface by clicking on the 'Add Health Checks' hyperlink. If you have an application for which you do not require Health Checks then you can click on the grey cross to dismiss the information panel shown below.
 
@@ -111,7 +111,7 @@ The colour scheme of the pods is important and conveys information about the pod
 
 The above graphical mechanism for creating probes will be explained shortly. Since many applications required probes to be created as part of a deployment process it is sensible to start with how to create probes using the command line.
 
-When the build has completed the right hand side panel will shown something similar to the image below. Note that the route will be different to that which is shown below. 
+When the build has completed the right hand side panel will show something similar to the image below. Note that the route will be different to that which is shown below. 
 
 image::healthprobes-2.png[Deployment configuration resource information]
 
@@ -257,9 +257,9 @@ oc set probe dc/node-app-rest --liveness --remove
 
 To create the readiness probe use the web user interface. From the topology view right click on the node for the application and from the pop up menu select "Add Health Check".
 
-On the health checks page select to add a readiness probe usng the following parameters.
+On the health checks page select to add a readiness probe using the following parameters.
 
-* Inital Delay - Become active after 30 seconds
+* Initial Delay - Become active after 30 seconds
 * Failure Threshold - Remove the pod from the service endpoint after 3 instances of a failure to respond
 * Success Threshold - Cancel the removal of the pod and add it back to the service endpoint after 1 successful response
 * Period - Probe the application every 5 seconds
