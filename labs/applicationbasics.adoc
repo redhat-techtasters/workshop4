@@ -48,7 +48,7 @@ Click 'Add'
 * *Operator Backed - this allows the developer to deploy an Application that is backed by an Operator, i.e. using a CR to deploy an application*
 * *Helm Charts - this allows the developer to add something to the project from a Helm chart, which defines the base state of a set of Kubernetes objects*
 * *Pipeline - this allows the developer to instantly add a Tekton based pipeline for automated delivery of an application*
-* *Event Source - this allows the developer to register a subscription to aclass of events from a given system* 
+* *Event Source - this allows the developer to register a subscription to a class of events from a given system* 
 * *Channel - this allows a developer to create a Knative channel for Knative event driven behaviours
 
 Select ‘From Catalog’
@@ -92,7 +92,7 @@ In a separate browser tab go to https://github.com/utherp0/nodenews[https://gith
 
 Close the github tab
 
-Back at the OCP4.6 UI scroll down and ensure the Application Name and Name textboxes have been autofilled. These should be set to nodenews-app and nodenews in order
+Back at the OCP4.7 UI scroll down and ensure the Application Name and Name textboxes have been autofilled. These should be set to nodenews-app and nodenews in order
 
 *OpenShift 4 introduces the concept of Application Grouping. This allows a visualisation of multiple Applications in the same 'group', making visibility of the Application much 
 simpler.*
@@ -250,7 +250,7 @@ oc get pods
 ----
 
 *If you look carefully at the Pods shown you will notice there are additional Pods above and beyond the ones expected for your Applications. If you look at the state of 
-these Pods they will be marked as Completed. Everything in OpenShift is executed as a Pod, including Builds. These completed Pods are the Builds we have run so far.*
+these Pods that will be marked as Completed. Everything in OpenShift is executed as a Pod, including Builds. These completed Pods are the Builds we have run so far.*
 
 [source]
 ----
@@ -269,7 +269,7 @@ oc get dc
 
 *DC is an abbreviation for Deployment Config. These are Objects that directly define how an Application is deployed within OpenShift. This is the ''ops''
 side of the OpenShift system. Deployment Configs are different to Kubernetes Deployments in that they are an extension and contain things such as Config Maps, Secrets, 
-Volume Mounts, labelled targetting of Nodes and the like.* 
+Volume Mounts, labelled targeting of Nodes and the like.* 
 
 TIP: Note that when you do the 'oc get dc' you get two deployments listed. Remember that we chose the Kubernetes deployment option for the httpd app.
 
@@ -282,7 +282,7 @@ oc scale dc/nodenews --replicas=2
 
 === A Summary of Application Interactions
 
-Go back to the UI and make sure you are on Developer mode. Click on Topology. 
+Go back to the UI and make sure you are in Developer mode. Click on Topology. 
 
 Click on the ‘nodenews’ application
 
