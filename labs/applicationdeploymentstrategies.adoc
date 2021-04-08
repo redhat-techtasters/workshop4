@@ -12,7 +12,7 @@ The activities in this workshop will introduce a new version of a simple applica
 
 TIP: The application to be used in this workshop is a simple NodeJS REST interface. Version 1 exists on the master branch of the GIT Repository and version 2 exists on the experimental branch.
 
-To begin the creation of the application use the following commands in an command line window. :
+To begin the creation of the application use the following commands in a command line window. :
 
 ==== Creation of version 1
 
@@ -246,7 +246,7 @@ oc set route-backends simple-rest-app-route simple-rest-app-v1-0=0 simple-rest-a
 
 === URL based routing
 
-Many organizations want to use a common URL for their web sites so that it is easy for users. This is often achieved by pointing a specific URL at an OpenShift cluster route within a global load balancer function, however this is not essential and it is possible to use routes to achieve the same result. Take as an example a holiday company called myholiday.com. The company wishes to sell package holidays, short breaks, cruises and adventure holidays and they create different applications for these purposes. By using a common host name in a series of route it is possible to ensure that traffic flows to the right location based on the path of the url used. The diagram below shows the described scenario and how the routes, services and applications work together
+Many organizations want to use a common URL for their web sites so that it is easy for users. This is often achieved by pointing a specific URL at an OpenShift cluster route within a global load balancer function, however this is not essential and it is possible to use routes to achieve the same result. Take as an example a holiday company called myholiday.com. The company wishes to sell package holidays, short breaks, cruises and adventure holidays and they create different applications for these purposes. By using a common host name in a series of routes it is possible to ensure that traffic flows to the right location based on the path of the url used. The diagram below shows the described scenario and how the routes, services and applications work together
 
 image::deployment-strategies-4.png[URL based routing]
 
