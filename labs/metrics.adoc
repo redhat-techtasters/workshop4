@@ -45,7 +45,7 @@ Click 'Create Application'. In the 'Git Repo URL' textbox enter https://github.c
 
 Insure the text 'Validated' appears beneath the textbox. If it doesn't check the URL
 
-Click on 'Advanced Git Options'
+Click on 'Show Advanced Git Options'
 
 In the Context Dir textbox enter /apps/nodeatomic
 
@@ -53,7 +53,7 @@ Scroll down to the *General* section. Set the 'Application Name' to 'events-app'
 
 Set the 'Name' to 'nodeatomic'
 
-Scroll down to the *Resources* section. Select 'Deployment Config'.
+Scroll down to the *Resources* section. Select 'DeploymentConfig'.
 
 Click Create. Leave the application building and switch back to Adminstrator viewpoint (by clicking on Developer at the top left and choosing Administrator).
 
@@ -67,11 +67,11 @@ TIP: Events only exist on the system for an hour. You can pause the flow of even
 
 Note that the events show the build container being pulled, created, deployed and executed. 
 
-Now in the pulldown box at the top left of the events set the resource to Build (build.openshift.io/v1). This will filter the events to only ones from that type of resource. The screen should now look like:
+Now in the dropdown menu at the top left (above the events) set the resource to 'Build' (build.openshift.io/v1). This will filter the events to only ones from that type of resource. The screen should now look like:
 
 image::events4.png[build events only]
 
-Now click in the pulldown box at the top left of the events. In the textbox where it says 'Select Resource' type 'pod'. From the selection in the pulldown choose 'Pod'. Remove the 'Build' filter 
+Now in the dropdown menu at the top left (above the events) set the resource to 'Pod'. Remove the 'Build' filter.
 
 Pause the event stream again. It should look like this:
 
@@ -121,11 +121,11 @@ Select the topmost Pod and click on its name. The Pod Details tab will display t
 
 image::events6.png[Example Pod metrics]
 
-Now click on Home/Projects. Click on the events-{{USER_ID}} project. Scroll down to the 'Utilization' tab. This shows graphs for the agregated metrics for *all* Pods running in the Project, along with network transfer in/out for the Project and Pod count.
+Now click on Home/Projects. Click on the events-{{USER_ID}} project. Scroll down to the 'Utilization' section. This shows graphs for the agregated metrics for *all* Pods running in the Project, along with network transfer in/out for the Project and Pod count.
 
 image::events7.png[Aggregated Pod metrics]
 
-As of writing the following examples are in tech preview. On the Utilization tab click directly on the Pod Count graph itself. This will take you to an expanded graph which is a realtime version of the metrics executed by a query. The query is displayed beneath the graph. If you watch the graph it will update periodically.
+On the Utilization tab click directly on the Pod Count graph itself. This will take you to an expanded graph which is a realtime version of the metrics executed by a query. The query is displayed beneath the graph. If you watch the graph it will update periodically.
 
 Switch back to the terminal tab and enter:
 
@@ -161,19 +161,22 @@ For example, if you had three Pods running 'myapp' you could search for any erro
 
 ==== Examining Logs using the OCP UI
 
-Switch to the Developer view and then to the topology view. You should have one copy of the Application running (one Pod). Click on the Pod to show the DC tab on the right side of the page. Now click on Resources if it doesn't display that to list the Pods.
 
-On the Pod icon click the URL icon (top right). This will open another tab with the output of the Application in it. Switch back to the OpenShift interface and click on 'View Logs', situated to the right of the single Pod in the DC tab.
+Switch to the Developer view and then to the topology view. You should have one copy of the Application running (one Pod). 
+On the Pod icon click the URL icon (top right). This will open another tab with the output of the Application in it. 
+Switch back to the OpenShift interface and click on the Pod to show the DC tab on the right side of the page. 
 
-This will present you with the Pod Details page and the log output for this Pod. Switch back to the Application tab, titled 'Node Atomic basic operations'.
+Now click on Resources if it doesn't display that to list the Pods, then click on 'View Logs', situated to the right of the single Pod in the DC tab.
+This will present you with the Pod Details page and the log output for this Pod.
 
+Switch back to the Application browser tab that opened when clicking the URL icon.
 Add /log to the end of the URL and hit return. The page should change to a simple webpage that says 'Logged 20 messages....'
 
 Switch back to the OpenShift interface. The log will now have twenty log messages (count 0 to count 19) displayed.
 
-Click on Topology. Click on the Pod to bring up the DC tab. Click on Details.
+Click on Topology. Click on the Pod to bring up the DC tab and select the Details tab.
 
-We are going to scale the Application to two copies; click on the up arrow displayed next to the Pod indicator *once*. Click on Resources and make sure there are now two copies of the Application running.
+We are going to scale the Application to two copies; click on the up arrow displayed next to the Pod indicator *once*. Click on Resources tab and make sure there are now two copies of the Application running.
 
 ==== Examining logs using the oc command
 

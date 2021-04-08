@@ -1,6 +1,6 @@
 workshop_manifests:
   - id: intro
-    title: Introduction and Setup
+    title: OpenShift Essentials
     labs:
       - id: intro
         title: Introduction
@@ -8,9 +8,6 @@ workshop_manifests:
         title: Workshop Pre-requisites
       - id: introductiontooc
         title: Introduction to 'oc'
-  - id: essentials
-    title: OpenShift Essentials
-    labs:
       - id: applicationbasics
         title: Application Basics
       - id: deployments
@@ -27,31 +24,3 @@ workshop_manifests:
         name: Pod Health Probes
       - id: metrics
         name: Introduction to Metrics and Logging in OpenShift
-  - id: devtools
-    title: Developer Tools
-    labs:
-      - id: odo
-        title: OpenShift DO (odo)
-      - id: tekton
-        title: OpenShift Pipelines - Tekton
-      - id: quay
-        title: OpenShift and the Quay Image Repository
-      - id: codereadyworkspaces
-        title: CodeReady Workspaces
-  - id: innovation
-    title: OpenShift Innovation
-    labs:
-      - id: serverlessserving
-        title: OpenShift Serverless Serving
-      - id: camelk
-        title: Camel K on OpenShift
-      - id: camelkocpserverlesseventing
-        title: Camel K and OpenShift Serverless Eventing
-      - id: camelkocpserverlessservice
-        title: Camel K and OpenShift Serverless Serving
-      - id: servicemesh
-        title: OpenShift Service Mesh
-      - id: quarkus
-        title: Introduction to Quarkus on OpenShift
-      - id: kogito
-        title: Kogito on OpenShift

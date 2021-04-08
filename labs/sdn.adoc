@@ -30,8 +30,6 @@ In the search box enter ‘node’. Select the Node.js option (Builder Image)
 
 *Click ‘Create Application’*
 
-Default the builder image to version 12-ubi7 (it should already have this selected)
-
 For the git repo enter *https://github.com/utherp0/nodenews* - insure the UI indicates 'Validated' when you complete the text
 
 Set the 'Application Name' to ‘application1-app’
@@ -94,7 +92,7 @@ Scroll down and take a note of the IP address for the Pod
 
 image::sdn-4.png[Highlighted Pod IP]
 
-*Click on 'Networking/Services'*
+*Navigate to 'Networking/Services'*
 
 *Click on the application1 service*
 
@@ -102,7 +100,7 @@ TIP: Note that the Cluster IP address for the Service has NOT changed. Scaling t
 
 === Using the shorthand Service name directly
 
-*Click on 'Workloads/Pods'*
+*Navigate to 'Workloads/Pods'*
 
 Set the filter to 'Running' for ease of view
 
@@ -173,7 +171,7 @@ OpenShift actually provides three distinct levels of information when it comes t
 By default when you create a project it is assigned some default policies that mirror the behaviour of the 'Multitenant' configuration, isolating the namespace. In this section we will remove those defaults and create some others to show the capabilities.
 ****
 
-*Click on 'Network/Network Policies'*
+*Navigate to 'Network/Network Policies'*
 
 For each of the policies listed click on the triple dot icon on the far right and choose ‘Delete Network Policy’.
 
@@ -181,7 +179,7 @@ image::sdn-5.png[Delete Network Policies]
 
 The Network Policy tab should display ‘No Network Policies Found’.
 
-Go to Workloads/Pods, click on one of the application1 Pods, choose Terminal
+Navigate to Workloads/Pods, click on one of the application1 Pods, choose Terminal
 
 Repeat the ‘curl’ command listed above for the person sat next to you, i.e. curl their application1 (again, if there is no one ask the course administrator to create a networktest project you can reference)
 
@@ -211,7 +209,7 @@ spec:
 
 Wait until the person next to you has done the same
 
-*Click on 'Workloads/Pods', click on one of the application1 Pods, choose Terminal*
+*Navigate to 'Workloads/Pods', click on one of the application1 Pods, choose Terminal*
 
 Repeat the ‘curl’ command listed above for the person sat next to you, i.e. curl their application1 
 
@@ -219,7 +217,7 @@ The call will eventually fail - feel free to hit Ctrl-C to interrupt
 
 TIP: The creation of a Network Policy that prohibits ingress to the Application Service has stopped access to the Service from external namespaces AND internal Services.
 
-*Click on 'Workloads/Pods'*
+*Navigate to 'Workloads/Pods'*
 
 *Click on the active pod for application2*
 
@@ -236,7 +234,7 @@ The call will eventually fail
 
 TIP: This shows that the Service is prohibited even from Services in its own namespace/project. This application of Network Policy allows for fine-grain control of traffic egress/ingress at the Service level. The other installation mode for SDN for OpenShift 4 is with Network Policies enabled, with default Network Policies providing a fully multitenanted environment.
 
-*Click on 'Projects'*
+=== Clean-Up
 
 On the triple dot icon on the far right for networktest-{{USER_ID}} select ‘Delete Project’
 
